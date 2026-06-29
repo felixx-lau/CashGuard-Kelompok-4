@@ -4,16 +4,12 @@ plugins {
 
 android {
     namespace = "edu.uph.m24si1.cashguardkelompok4"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "edu.uph.m24si1.cashguardkelompok4"
         minSdk = 30
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -43,4 +39,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
+    
+    // Room Database
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+
+    // LiveData & ViewModel
+    implementation(libs.lifecycle.livedata)
+    implementation(libs.lifecycle.viewmodel)
 }
